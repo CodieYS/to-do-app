@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+
+  }
+  body {
+    background: #eee;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    padding: 0 16px; 
+  }
+  
+  header {
+    background-image: url('./assets/pexels-goumbik-317356.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    height: 35vh; /* 35% of the viewport height */
+    margin: auto -16px;
+    padding: 20px 32px; /* Increased padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.274);
+    display: flex; /* Flexbox to center content */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    position: relative; /* For overlay */
+  }
+  
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.226); /* Semi-transparent overlay */
+    z-index: 1;
+  }
+  
+  header h1 {
+    color: white;
+    font-family: "McLaren", cursive;
+    font-weight: 400; /* Slightly bolder font weight */
+    font-size: 2.5em; /* Larger font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+    z-index: 2;
+    position: relative; /* Ensure the text appears above the overlay */
+  }
+  
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    right: 0;
+  }
+  
+  footer p {
+    color: #7c7a7a;
+  }
+  .note {
+    background: linear-gradient(to bottom right, #ffffff, #f9f9f9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 260px;
+    margin: 20px;
+    float: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Taaki har row me notes properly align ho */
+}
+  
+  .note:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .note h1 {
+    font-size: 1.4em;
+    margin-bottom: 6px;
+  }
+  .note p {
+    text-align: justify;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .note button {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    background: linear-gradient(to bottom right, #ffffff, #f9f9f9);
+    color: #f5ba13;
+    border-radius: 50%;
+    border: none;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  form.create-note {
+    position: relative;
+    width: 480px;
+    margin: -30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+    z-index: 1;
+  }
+  form.create-note input,
+  form.create-note textarea {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+  }
+
+form.create-note button {
+    position: absolute;
+    right: 20px; /* Adjusted for better alignment */
+    bottom: -17px; /* Space between button and form */
+    background: #ffe62a;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 38px; /* Slightly larger button */
+    height: 38px; /* Slightly larger button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    cursor: pointer;
+    outline: none;
+    font-size: 1.5em; /* Larger font size for button icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  }
+  
+  form.create-note button:hover {
+    background: #f49e0e; /* Darker shade on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+  }
+  
+  form.create-note button:active {
+    background: #e1b436; /* Even darker shade on click */
+  }
